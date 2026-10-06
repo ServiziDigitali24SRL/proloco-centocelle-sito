@@ -1,0 +1,408 @@
+@font-face{font-family:'Bitter';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/bitter-400.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Bitter';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/bitter-400.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:300;font-display:swap;src:url('fonts/source-sans-pro-300.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/source-sans-pro-400.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/source-sans-pro-700.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+
+
+:root{--bg:#f4eee4;--panel:#fffaf3;--ink:#322824;--text:#4e4640;--accent:#8e493c;--accent2:#6f3e34;--line:#d2bda6;--soft:#ece0d2;--serif:Georgia,'Times New Roman',serif;--sans:'Source Sans Pro',Arial,sans-serif;--display:'Oswald',Arial,sans-serif;--script:'Allura',cursive}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--serif);font-size:13px;line-height:1.62;-webkit-font-smoothing:antialiased}a{color:inherit}img{max-width:100%;display:block}.site{width:min(1210px,calc(100% - 36px));margin:0 auto;padding:110px 0 60px}.site-header{width:100%;position:relative;margin-top:-50px;padding:0 22px;background:linear-gradient(135deg,transparent 0 5px,var(--line) 5px 6px,transparent 6px) left bottom/100% 10px no-repeat}.logo{display:block;position:relative;z-index:4;width:min(551px,70%);margin:0 auto -22px;padding:0 25px;text-align:center;background:var(--bg);text-decoration:none}.logo img{width:auto;max-width:100%;height:135px;object-fit:contain;margin:0 auto}.top-border{position:relative;height:22px;background:linear-gradient(90deg,var(--accent2),var(--accent),var(--accent2));border-top:1px solid #744235;border-bottom:1px solid var(--line)}.header-left,.header-right{position:absolute;bottom:0;width:45px;height:48px;border-bottom:1px solid var(--line)}.header-left{left:4px;border-left:1px solid var(--line)}.header-right{right:4px;border-right:1px solid var(--line)}.site-main{position:relative;width:100%;overflow:hidden;background:linear-gradient(90deg,transparent 0 14px,var(--line) 14px 15px,transparent 15px calc(100% - 15px),var(--line) calc(100% - 15px) calc(100% - 14px),transparent calc(100% - 14px))}.site-main-in{width:100%;min-height:650px;display:grid;grid-template-columns:292px minmax(0,873px) 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel)}.sidebar-container{padding:45px 23px 40px 48px}.sidebar-area{position:relative;min-height:450px;padding:0 23px 18px;border-left:1px solid var(--line);border-right:1px solid var(--line)}.reservation-area{text-align:center;padding:0 0 10px}.reservation-area h3{margin:0;color:var(--accent);font:600 25px/1.15 var(--script)}.reservation-area .phone{margin:0;color:var(--ink);font:400 21px/1.4 var(--display);letter-spacing:.04em}.reservation-area .phone a{text-decoration:none}.reservation-area .address-title{margin:14px 0 0;color:var(--accent);font:600 24px/1.1 var(--script)}.reservation-area .address{margin:1px 0 12px;color:var(--ink);font:400 17px/1.35 var(--display);letter-spacing:.025em}.reservation-area .address a{text-decoration:none}.reservation-button{display:block;margin:7px auto 16px;width:100%;padding:8px 6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--accent2);font:400 19px var(--display);letter-spacing:.1em;text-transform:uppercase;text-decoration:none}.reservation-button:hover{color:var(--accent)}.nav-heading{position:absolute;left:-9999px}.nav-menu,.sub-menu{list-style:none;padding:0;margin:0}.sub-menu{display:none}.menu-item-has-children:hover>.sub-menu,.menu-item-has-children:focus-within>.sub-menu,.menu-item-has-children[aria-expanded=true]>.sub-menu{display:block}.current-menu-item>.sub-menu{display:block}.nav-menu>li{position:relative;text-align:center;border-bottom:1px solid var(--line)}.nav-menu>li:before,.nav-menu>li:after{position:absolute;bottom:-4px;width:7px;height:7px;content:'✦';z-index:2;background:var(--bg);color:var(--accent);font:9px/7px Georgia;text-align:center}.nav-menu>li:before{left:-3px}.nav-menu>li:after{right:-3px}.nav-menu>li>a{display:block;padding:8px 3px;text-decoration:none;color:var(--ink);font:400 15px/1.25 var(--display);letter-spacing:.095em;text-transform:uppercase}.nav-menu>li>a:hover,.nav-menu>li>a[aria-current=page]{color:var(--accent)}.sub-menu{padding:0 0 8px}.sub-menu a{display:block;padding:4px 3px;text-decoration:none;color:var(--text);font:400 12px/1.3 var(--sans);letter-spacing:.04em}.sub-menu a:hover{color:var(--accent)}.sidebar-social{text-align:center;margin:14px 0 0;font:700 10px var(--sans);letter-spacing:.1em;text-transform:uppercase}.sidebar-social a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line)}.site-content{min-width:0;padding:46px 48px 40px 0}.page-content{width:100%;overflow:hidden}.page-content h1,.site-content h1{margin:0 auto;padding:0 0 12px;text-align:center;color:var(--ink);font:400 36px/1.5 var(--display);letter-spacing:.11em;text-transform:uppercase}.home-slider{height:500px;position:relative;overflow:hidden;clear:both;margin:0 0 25px;isolation:isolate;background:var(--soft)}.slides,.slides li{list-style:none;margin:0;padding:0}.slides{height:100%;position:relative}.slides li{position:absolute;inset:0;opacity:0;transition:opacity .5s ease}.slides li.active{opacity:1}.slides img{width:100%;height:100%;object-fit:cover;object-position:center 50%}.slider-frame{position:absolute;inset:9px;z-index:2;border:1px solid rgba(255,250,243,.8);pointer-events:none}.home-border{position:absolute;z-index:3;top:0;bottom:0;width:17px;background:linear-gradient(90deg,#f4eee4cc,transparent)}.home-border.left{left:0}.home-border.right{right:0;transform:scaleX(-1)}.slider-arrow{position:absolute;z-index:4;top:50%;transform:translateY(-50%);width:42px;height:42px;border:0;background:#32282499;color:#fff;font:36px/1 var(--serif);cursor:pointer}.slider-arrow:hover{background:var(--accent)}.slider-arrow.prev{left:14px}.slider-arrow.next{right:14px}.slide-dots{position:absolute;z-index:4;bottom:13px;left:50%;transform:translateX(-50%);display:flex;gap:7px}.slide-dots button{width:9px;height:9px;padding:0;border:1px solid white;border-radius:50%;background:transparent}.slide-dots button[aria-pressed=true]{background:white}.detail-text{width:100%;margin:0 auto;padding-bottom:20px}.detail-text p{margin:0;padding:0 0 15px;font:13px/1.75 var(--serif);color:var(--text)}.detail-text.center{text-align:center}.detail-text em{color:var(--accent2)}.ornate-heading{margin:25px 0 20px;display:flex;align-items:center;gap:12px;text-align:center;color:var(--accent);font:400 21px/1.2 var(--display);letter-spacing:.1em;text-transform:uppercase}.ornate-heading:before,.ornate-heading:after{height:1px;content:'';flex:1;background:var(--line)}.page-hero{height:350px;margin:0 0 22px;position:relative;overflow:hidden}.page-hero img{width:100%;height:100%;object-fit:cover}.page-hero:after{position:absolute;inset:8px;content:'';border:1px solid #fff9;pointer-events:none}.two-images{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 25px}.two-images img{width:100%;height:245px;object-fit:cover;border:1px solid var(--line);padding:4px;background:var(--bg)}.menu-box-area{padding:22px 0 10px}.menu-box{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 14px;margin:0;padding:0;list-style:none}.menu-box li{position:relative;text-align:center;padding:0 0 12px;border-bottom:1px solid var(--line)}.menu-box a{text-decoration:none}.menu-box img{width:100%;height:155px;object-fit:cover}.menu-box h2{margin:0;padding:11px 4px 2px;color:var(--accent2);font:400 18px/1.25 var(--display);letter-spacing:.09em;text-transform:uppercase}.menu-box p{margin:0;color:var(--text);font:12px/1.4 var(--serif)}.menu-box a:hover h2{color:var(--accent)}.dining-nav{margin:0 0 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.dining-nav-menu{display:flex;flex-wrap:wrap;justify-content:center;gap:0;list-style:none;padding:0;margin:0}.dining-nav-menu a{display:block;padding:9px 10px;text-decoration:none;color:var(--accent2);font:400 12px var(--display);letter-spacing:.08em;text-transform:uppercase}.dining-nav-menu a:hover,.dining-nav-menu a[aria-current=page]{color:var(--accent);text-decoration:underline;text-underline-offset:4px}.menu-list{max-width:720px;margin:0 auto}.menu-item{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:13px 2px;border-bottom:1px dotted var(--line)}.menu-item h3{margin:0;color:var(--ink);font:400 15px/1.4 var(--serif)}.menu-item p{grid-column:1;margin:0;color:var(--text);font:12px/1.5 var(--serif)}.menu-price{grid-column:2;grid-row:1/3;align-self:start;color:var(--accent2);font:400 15px var(--display);white-space:nowrap}.menu-price small{display:block;text-align:right;font:11px var(--sans)}.menu-note{margin:20px 0;padding-top:12px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font:12px/1.5 var(--sans)}.press-list{margin:18px 0 0;padding:0;list-style:none}.press-list li{padding:17px 0 14px;border-bottom:1px solid var(--line)}.press-list h2{margin:0 0 6px;color:var(--accent2);font:400 19px var(--display);letter-spacing:.08em;text-transform:uppercase}.press-list p{margin:0;color:var(--text);font:italic 14px/1.7 var(--serif)}.press-list small{display:block;margin-top:5px;font:11px var(--sans);color:var(--accent)}.event-form{max-width:620px;margin:20px auto;padding:22px;border:1px solid var(--line);background:var(--bg)}.event-form label{display:block;margin:0 0 12px;color:var(--accent2);font:700 11px var(--sans);letter-spacing:.1em;text-transform:uppercase}.event-form input,.event-form textarea{display:block;width:100%;margin-top:5px;padding:9px;border:1px solid var(--line);background:var(--panel);font:14px var(--sans);color:var(--ink)}.event-form input:focus,.event-form textarea:focus{outline:1px solid var(--accent)}.event-form textarea{min-height:95px;resize:vertical}.button{display:inline-block;padding:10px 17px;background:var(--accent2);border:1px solid var(--accent2);color:var(--bg);font:400 12px var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none}.button:hover{background:var(--accent);border-color:var(--accent)}.button.line{background:transparent;color:var(--accent2)}.button-line{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:16px 0}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.contact-block{padding:15px 0;border-bottom:1px solid var(--line)}.contact-block h2{margin:0 0 5px;color:var(--accent);font:600 22px var(--script)}.contact-block p{margin:0;color:var(--ink);font:400 16px/1.5 var(--display)}.contact-block a{text-decoration:none}.hours-table{width:100%;border-collapse:collapse}.hours-table th,.hours-table td{padding:10px 5px;border-bottom:1px solid var(--line);text-align:left;font:13px var(--sans)}.hours-table th{color:var(--accent2);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}.gallery img{width:100%;height:240px;object-fit:cover;padding:4px;border:1px solid var(--line);background:var(--bg)}.staff-list{display:grid;grid-template-columns:1fr 1fr;gap:18px}.staff{padding:15px;border-top:1px solid var(--line);text-align:center}.staff h2{margin:0;color:var(--accent2);font:400 19px var(--display);letter-spacing:.08em;text-transform:uppercase}.staff .role{margin:2px 0 8px;color:var(--accent);font:600 20px var(--script)}.staff p{margin:0;font:13px/1.6 var(--serif)}.bottom-logo{display:flex;align-items:center;gap:24px;padding:22px 30px;border-bottom:1px solid var(--line)}.bottom-logo img{width:190px;height:110px;object-fit:contain}.bottom-logo .footer-nav{flex:1;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap}.bottom-logo a{color:var(--accent2);text-decoration:none;font:400 12px var(--display);letter-spacing:.07em;text-transform:uppercase}.site-footer{padding:17px 35px 0;display:flex;justify-content:space-between;gap:20px;align-items:center;color:var(--text);font:11px/1.6 var(--sans)}.mobile-reserve{display:none}
+@media(max-width:1000px){.site{width:calc(100% - 28px)}.site-main-in{grid-template-columns:252px minmax(0,1fr)}.sidebar-container{padding-left:28px;padding-right:18px}.sidebar-area{padding-left:17px;padding-right:17px}.site-content{padding-right:30px}.home-slider{height:430px}.menu-box{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.site{width:100%;padding:55px 0 80px}.site-header{margin-top:-35px;padding:0 9px}.logo{width:75%;margin-bottom:-16px;padding:0 12px}.logo img{height:112px}.top-border{height:14px}.header-left,.header-right{height:33px}.site-main{background:none}.site-main-in{display:flex;flex-direction:column;border:0}.sidebar-container{order:0;padding:0 8px}.sidebar-area{min-height:0;padding:0;border:0;border-bottom:1px solid var(--line);background:var(--bg)}.reservation-area{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0 8px;padding:7px 5px 4px}.reservation-area h3,.reservation-area .address-title{font-size:20px}.reservation-area .phone{font-size:16px}.reservation-area .address{font-size:14px}.reservation-button{grid-column:1/-1;margin:4px auto 7px;padding:4px}.nav-menu{display:flex;overflow:auto;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.menu-item-has-children[aria-current=page]>.sub-menu{display:flex;position:absolute;z-index:8;left:0;top:100%;background:var(--panel);border:1px solid var(--line);min-width:170px;flex-direction:column}.sub-menu a{white-space:nowrap}.nav-menu>li{flex:0 0 auto;border:0}.nav-menu>li:before,.nav-menu>li:after{display:none}.nav-menu>li>a{padding:9px 10px;font-size:11px}.sub-menu{display:none}.sidebar-social{display:none}.site-content{padding:17px 10px 20px}.page-content h1,.site-content h1{font-size:29px;line-height:1.3;padding-bottom:8px}.home-slider{height:57vh;min-height:270px;max-height:430px;margin-bottom:18px}.slider-frame{inset:6px}.slider-arrow{width:34px;height:34px;font-size:29px}.slider-arrow.prev{left:9px}.slider-arrow.next{right:9px}.page-hero{height:270px}.two-images img{height:170px}.menu-box{grid-template-columns:1fr 1fr;gap:12px 9px}.menu-box img{height:125px}.menu-box h2{font-size:14px}.dining-nav-menu a{padding:8px 7px;font-size:10px}.menu-item h3{font-size:14px}.contact-grid,.staff-list{grid-template-columns:1fr;gap:10px}.gallery{gap:7px}.gallery img{height:160px}.bottom-logo{padding:15px 12px;display:block;text-align:center}.bottom-logo img{margin:auto;width:150px;height:85px}.bottom-logo .footer-nav{justify-content:center;margin-top:9px;gap:10px}.site-footer{display:block;text-align:center;padding:12px 12px 0}.mobile-reserve{display:flex;position:fixed;z-index:30;left:9px;right:9px;bottom:9px;gap:7px}.mobile-reserve a{flex:1;padding:11px 6px;background:var(--accent2);color:var(--bg);text-align:center;text-decoration:none;font:400 11px var(--display);letter-spacing:.1em;text-transform:uppercase;box-shadow:0 2px 8px #0003}.mobile-reserve a:first-child{background:var(--accent)}}
+/* Balthazar structural recreation, redrawn in Proloco's own visual identity. */
+.site-header{background:none;margin-top:-50px;padding:0 22px}
+.logo{margin:0 auto;padding:0 25px}
+.top-border{height:22px;background:linear-gradient(90deg,var(--line),var(--accent),var(--line));border:0;position:relative}
+.top-border:before,.top-border:after{content:"";position:absolute;left:0;right:0;height:2px;background:var(--line)}.top-border:before{top:2px}.top-border:after{bottom:2px}
+.header-left,.header-right{display:none}
+.site-main{padding:18px;overflow:visible;background-color:var(--bg);background-image:url('images/proloco-vine-h.svg'),url('images/proloco-vine-h.svg'),url('images/proloco-vine-v.svg'),url('images/proloco-vine-v.svg');background-repeat:repeat-x,repeat-x,repeat-y,repeat-y;background-position:center top,center bottom,left center,right center;background-size:30px 18px,30px 18px,18px 30px,18px 30px}
+.site-main-in{grid-template-columns:292px minmax(0,1fr);border:1px solid var(--line);background:var(--panel)}
+.sidebar-container{padding:45px 23px 40px 48px}
+.sidebar-area{min-height:450px;padding:17px 18px 18px;border:4px double var(--line);box-shadow:inset 0 0 0 5px var(--panel),inset 0 0 0 6px var(--line)}
+.reservation-area h3,.reservation-area .address-title{font-size:22px}
+.reservation-button,.sidebar-cta{position:relative;display:block;width:100%;margin:12px auto 18px;padding:8px 4px;border:3px double var(--line);outline:1px solid var(--accent2);outline-offset:-6px;color:var(--ink);text-align:center;font:500 17px/1.2 var(--display);letter-spacing:.02em;text-decoration:none;text-transform:uppercase}
+.reservation-button:hover,.sidebar-cta:hover{color:var(--accent)}
+.reservation-button:before,.reservation-button:after,.sidebar-cta:before,.sidebar-cta:after{content:'❧';position:absolute;top:50%;transform:translateY(-50%);color:var(--accent);font:18px Georgia;background:var(--panel)}
+.reservation-button:before,.sidebar-cta:before{left:-9px}.reservation-button:after,.sidebar-cta:after{right:-9px;transform:translateY(-50%) scaleX(-1)}
+.nav-menu>li{border-bottom:1px solid var(--line)}
+.nav-menu>li>a{padding:7px 3px;text-decoration:none;color:var(--ink);font:400 15px/1.25 'Cinzel',Georgia,serif;letter-spacing:.025em;text-transform:none}
+.nav-menu>li>a:hover,.nav-menu>li>a[aria-current=page]{color:var(--accent)}
+.nav-menu>li:before,.nav-menu>li:after{content:'❧';width:10px;height:9px;bottom:-5px;font:10px/9px Georgia}
+.site-content{padding:46px 48px 40px 0}
+.page-content h1,.site-content h1{font:500 33px/1.35 var(--display);letter-spacing:.08em;text-transform:uppercase}
+.home-slider{height:500px;border:6px solid var(--ink);padding:1px;background:var(--panel)}
+.slider-frame{inset:4px;border:1px solid var(--panel)}
+.slider-arrow{background:var(--accent2);opacity:.92}
+.home-contact-strip{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin:26px 0 0;padding-top:16px;border-top:1px solid var(--line);font:700 11px var(--sans);letter-spacing:.11em;text-transform:uppercase}
+.home-contact-strip a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px}
+.bottom-logo{border-top:6px solid var(--accent2);border-bottom:0;justify-content:center;flex-wrap:wrap;padding-top:24px}
+@media(max-width:1000px){.site-main{padding:14px;background-size:24px 14px,24px 14px,14px 24px,14px 24px}.site-main-in{grid-template-columns:252px minmax(0,1fr)}}
+@media(max-width:650px){.site{padding-top:55px}.site-header{margin-top:-35px}.logo{margin:0 auto;padding:0 12px}.site-main{padding:12px 8px 16px;background-size:18px 12px,18px 12px,12px 18px,12px 18px}.site-main-in{display:flex;flex-direction:column;border:1px solid var(--line)}.sidebar-container{padding:0 8px}.sidebar-area{padding:0;border:0;border-bottom:1px solid var(--line);box-shadow:none}.reservation-button:before,.reservation-button:after,.sidebar-cta:before,.sidebar-cta:after{display:none}.site-content{padding:17px 10px 20px}.home-contact-strip{gap:10px}}
+
+/* Exact proportion from the reference layout: a wide landscape carousel in the right column. */
+.logo{margin:0 auto -22px}
+.top-border{height:22px;background:var(--bg) url('images/proloco-vine-h.svg') repeat-x center;background-size:30px 18px;border:0}
+.top-border:before,.top-border:after{height:1px;background:var(--line)}
+.site-main-in{grid-template-columns:292px minmax(0,1fr)}
+.sidebar-area{border:14px solid transparent;border-image:url('images/sidebar-ornament.svg') 24 fill / 14px / 0 stretch;box-shadow:none;padding:12px 17px 18px}
+.sidebar-cta{margin-top:12px}
+.home-slider{height:auto;aspect-ratio:1.65}
+.home-slider .slides{height:100%}
+.home-slider .slides li{height:100%}
+.home-contact-strip{display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;margin:24px 0 0;padding:14px 0 0;border-top:1px solid var(--line);font:13px/1.5 var(--serif);letter-spacing:0;text-transform:none}
+.home-contact-strip:before{content:'Resta in contatto con Proloco';font:400 17px/1.2 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.home-contact-strip a{grid-column:2;grid-row:1;color:var(--accent);font:700 11px var(--sans);letter-spacing:.11em;text-transform:uppercase}
+.bottom-logo{border-top:0;display:flex;justify-content:center;align-items:center;gap:32px;padding:24px 30px 12px}
+.bottom-logo img{width:190px;height:110px;object-fit:contain}
+.bottom-logo .footer-nav{display:none}
+.footer-mark{color:var(--accent2);font:400 16px/1.2 bureaugrotesqueoneone;letter-spacing:.13em;text-transform:uppercase;text-align:center}
+.site-footer{justify-content:center;flex-direction:column;gap:2px;text-align:center;padding-top:0}
+@media(max-width:1000px){.site-main-in{grid-template-columns:252px minmax(0,1fr)}.home-slider{height:auto;aspect-ratio:1.65}}
+@media(max-width:650px){.logo{margin:0 auto -16px}.top-border{height:14px;background-size:18px 12px}.sidebar-area{border:0;padding:0;box-shadow:none;border-bottom:1px solid var(--line)}.home-slider{height:57vh;aspect-ratio:auto}.home-contact-strip{grid-template-columns:1fr;text-align:center;gap:8px}.home-contact-strip:before,.home-contact-strip a{grid-column:1;grid-row:auto}.bottom-logo{display:flex;gap:12px;padding:14px 8px}.bottom-logo img{width:138px;height:80px}.footer-mark{font-size:11px}.site-footer{display:block;text-align:center}}
+.site-main{background-image:url('images/proloco-vine-h.svg'),url('images/proloco-vine-v.svg'),url('images/proloco-vine-v.svg');background-repeat:repeat-x,repeat-y,repeat-y;background-position:center bottom,left center,right center;background-size:30px 18px,18px 30px,18px 30px}
+.site-main{padding-top:0}
+.site-main-in{border-top:0}
+
+/* Match the reference site's desktop proportions: a deeper left information
+   panel and a slightly narrower landscape gallery on the right. */
+@media(min-width:1001px){
+  .site{width:min(1600px,82vw,calc(100% - 36px))}
+  .site-header .logo{height:75px;margin-bottom:-22px}
+  .site-header .logo img{position:absolute;top:0;left:50%;transform:translateX(-50%);height:120px}
+  .top-border{background:var(--bg) url('images/proloco-wheat-h.svg') repeat-x center;background-size:11px 22px}
+  .site-main-in{grid-template-columns:27.8% minmax(0,1fr)}
+  .site-main{padding:0}
+  .sidebar-container{padding:50px 0 40px 48px}
+  .sidebar-area{width:min(325px,calc(100% - 43px));min-height:36vw;padding:0 11px 18px}
+  .site-content{padding:50px 48px 40px 0}
+  .reservation-button{width:88%;border:3px double #655d58;border-radius:999px;outline:1px solid #8a8178;outline-offset:-7px;background:var(--panel);padding:7px 5px;color:var(--ink);font:400 19px/1.25 var(--display);letter-spacing:0;text-transform:none}
+  .reservation-button:before,.reservation-button:after{color:#655d58;font-size:20px}
+  .nav-menu>li>a{font-variant:small-caps;letter-spacing:.035em}
+  .page-content h1,.site-content h1{font-size:36px;letter-spacing:2px}
+  .site-main{padding-bottom:18px}
+  .site-main{background-image:url('images/proloco-wheat-h.svg');background-repeat:repeat-x;background-position:center bottom;background-size:11px 22px}
+  .site-main:before,.site-main:after{content:"";position:absolute;top:0;bottom:18px;z-index:4;width:23px;pointer-events:none;background:none repeat-y center top;background-size:23px 28px}
+  .site-main:before{left:0}
+  .site-main:after{right:0}
+}
+@media(min-width:651px) and (max-width:1000px){
+  .site{width:82vw}
+  .site-main-in{grid-template-columns:27.8% minmax(0,1fr)}
+  .sidebar-container{padding:32px 13.5% 30px}
+  .sidebar-area{min-height:36vw}
+  .site-content{padding-right:3.75%}
+}
+
+/* Balthazar homepage title placement, with Proloco copy. */
+.home-copy h1{text-align:left}
+.home-copy h1{font:400 26px/1.35 var(--display);letter-spacing:.08em;text-align:left}
+
+@media(min-width:1001px){.site-header .logo{width:min(551px,70%)}.site-header .logo img{width:100%;height:90px;object-fit:contain;top:-3px}}
+@media(min-width:1001px){.site-header .logo{height:75px}}
+
+/* Restore the reference sidebar's generous vertical rhythm and small dividers. */
+@media(min-width:1001px){
+  .sidebar-area{padding:8px 11px 24px}
+  .reservation-area .phone{margin:0}
+  .reservation-area .phone:after,
+  .reservation-area .address:after{content:'❧';display:block;height:14px;color:#9a7949;font:16px/14px Georgia,serif}
+  .reservation-area .address-title{margin-top:4px;line-height:.6}
+  .reservation-area .address{margin-bottom:20px;font-size:17px;line-height:1.3}
+  .reservation-button{margin-top:3px;margin-bottom:23px}
+  .nav-menu>li>a{padding-top:5px;padding-bottom:5px}
+}
+
+/* Match Balthazar's compact desktop viewport used in the supplied comparison. */
+@media(min-width:651px) and (max-width:1000px){
+  .site{width:90vw}
+  .site-header .logo{width:min(551px,70%);height:75px;margin-bottom:-22px}
+  .site-header .logo img{position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:100%;height:90px;object-fit:contain}
+  .top-border{height:22px;background:var(--bg) url('images/proloco-wheat-h.svg') repeat-x center;background-size:11px 22px}
+  .site-main-in{grid-template-columns:43.5% minmax(0,1fr)}
+  .site-main{padding:0 0 18px;background-image:url('images/proloco-wheat-h.svg');background-repeat:repeat-x;background-position:center bottom;background-size:11px 22px}
+  .site-main:before,.site-main:after{content:"";position:absolute;top:0;bottom:18px;z-index:4;width:23px;pointer-events:none;background:none repeat-y center top;background-size:23px 28px}
+  .site-main:before{left:0}.site-main:after{right:0}
+  .sidebar-container{padding:50px 3.5vw 40px 5.6vw}
+  .sidebar-area{width:auto;min-height:540px;padding:8px 11px 24px}
+  .site-content{padding:50px 3.75vw 40px 0}
+  .reservation-button{width:88%;margin:3px auto 23px;padding:7px 5px;border:3px double #655d58;border-radius:999px;outline:1px solid #8a8178;outline-offset:-7px;background:var(--panel);color:var(--ink);font:400 19px/1.25 var(--display);letter-spacing:0;text-transform:none}
+  .reservation-button:before,.reservation-button:after{color:#655d58;font-size:20px}
+  .reservation-area .phone{margin:0}
+  .reservation-area .phone:after,.reservation-area .address:after{content:'❧';display:block;height:14px;color:#9a7949;font:16px/14px Georgia,serif}
+  .reservation-area .address-title{margin-top:4px;line-height:.6}
+  .reservation-area .address{margin-bottom:20px;font-size:17px;line-height:1.3}
+  .nav-menu>li>a{padding:6px 3px;font-variant:small-caps;letter-spacing:.035em}
+  .page-content h1,.site-content h1{font-size:36px;letter-spacing:2px}
+}
+
+/* Balthazar reference typography applied with Proloco's color system. */
+@font-face{font-family:alisontwoscript;src:url('fonts/alisontwo-script.woff') format('woff');font-weight:normal;font-display:swap}
+@font-face{font-family:bureaugrotesquebox;src:url('fonts/bureau-grotesque-box.woff') format('woff');font-weight:normal;font-display:swap}
+@font-face{font-family:bureaugrotesqueoneone;src:url('fonts/bureau-grotesque-oneone.woff') format('woff');font-weight:normal;font-display:swap}
+@font-face{font-family:engravers_mtregular;src:url('fonts/engravers-mt.woff') format('woff');font-weight:normal;font-display:swap}
+:root{--serif:Georgia,'Times New Roman',serif;--sans:'Source Sans Pro',Arial,sans-serif;--display:bureaugrotesqueoneone;--script:alisontwoscript}
+.reservation-area h3,.reservation-area .address-title,.contact-block h2{font-family:alisontwoscript}
+.reservation-area .phone,.reservation-area .address{font-family:bureaugrotesqueoneone}
+.nav-menu>li>a,.dining-nav-menu a{font-family:engravers_mtregular;letter-spacing:0}
+.page-content h1,.site-content h1,.page-content h2,.site-content h2,.ornate-heading{font-family:bureaugrotesqueoneone}
+.menu-box h2,.sidebar-cta,.button,.button.line{font-family:bureaugrotesquebox}
+.menu-item h3,.menu-price{font-family:bureaugrotesqueoneone}
+
+/* Final alignment with the reference composition; Proloco identity and palette remain intact. */
+@media(min-width:1001px){
+ .site{width:min(1210px,calc(100% - 36px))}
+ .home-copy h1{font:400 30px/1.25 var(--display);letter-spacing:2px;text-align:left}
+ .bottom-logo{justify-content:center;border:0;padding:24px 24px 8px}
+ .bottom-logo .footer-nav{display:none}
+ .site-footer{display:block;text-align:center;padding:4px 20px 0}
+}
+@media(max-width:650px){.home-copy h1{font-size:26px}}
+
+/* Cornice di spighe più leggibile e continua, ispirata al fregio del riferimento. */
+.top-border{background:var(--bg) none repeat-x center;background-size:28px 22px}
+.site-main{background-image:none,none,none;background-repeat:repeat-x,repeat-y,repeat-y;background-position:center bottom,left center,right center;background-size:28px 22px,22px 28px,22px 28px}
+.sidebar-social{line-height:1.8}
+.sidebar-social span{color:var(--line)}
+@media(min-width:1001px){.site-main{background-image:none;background-repeat:repeat-x;background-position:center bottom;background-size:28px 22px}.site-main:before,.site-main:after{width:22px;background-image:none;background-size:22px 28px}}
+@media(min-width:651px) and (max-width:1000px){.site-main{background-image:none;background-repeat:repeat-x;background-position:center bottom;background-size:28px 22px}.site-main:before,.site-main:after{width:22px;background-image:none;background-size:22px 28px}}
+@media(max-width:650px){.top-border{background-size:28px 22px}.site-main{background-size:28px 22px,22px 28px,22px 28px}}
+
+/* Rifiniture responsive: contenuti subito visibili, menu touch e contatti leggibili. */
+@media(max-width:650px){
+  .site{width:100%;padding:54px 0 82px}
+  .site-header{margin-top:-35px;padding:0 10px}
+  .logo{width:min(90vw,420px);height:88px;margin:0 auto -12px;padding:0 12px}
+  .logo img{height:88px}
+  .top-border{height:20px;background-size:24px 19px}
+  .site-main{padding:10px 8px 18px!important;background-image:none,none,none;background-repeat:repeat-x,repeat-y,repeat-y;background-position:center bottom,left center,right center;background-size:24px 19px,14px 24px,14px 24px}
+  .site-main-in{display:flex;flex-direction:column;min-height:0!important;border:1px solid var(--line);background:var(--panel)}
+  .sidebar-container{order:0;width:100%;padding:0 8px}
+  .sidebar-area{min-height:0;padding:10px 9px 13px;border:0;border-bottom:1px solid var(--line);box-shadow:none;background:transparent}
+  .reservation-area{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center;gap:4px 8px;padding:4px 3px 7px}
+  .reservation-area h3,.reservation-area .address-title{margin:0;font:600 19px/1.2 var(--script);text-align:left}
+  .reservation-area .phone,.reservation-area .address{margin:0;font:400 15px/1.35 Georgia,serif;text-align:right}
+  .reservation-area .phone a,.reservation-area .address a{display:inline-block;padding:5px 0;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+  .reservation-area .reservation-button{grid-column:1/-1;display:flex;align-items:center;justify-content:center;min-height:46px;margin:5px 0 7px;padding:8px 10px;border:1px solid var(--line);font:600 13px/1.25 var(--sans);letter-spacing:.08em}
+  .nav-menu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;overflow:visible;margin:3px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .nav-menu>li{min-width:0;flex:initial;border-bottom:1px solid var(--line)}
+  .nav-menu>li>a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:7px 5px;font:600 11px/1.25 var(--sans);letter-spacing:.045em;text-align:center}
+  .menu-item-has-children>.submenu-toggle{position:absolute;z-index:2;top:6px;right:3px;display:flex;align-items:center;justify-content:center;width:31px;height:31px;padding:0;border:1px solid var(--line);border-radius:50%;background:var(--panel);color:var(--accent2);font:600 18px/1 var(--sans);cursor:pointer}
+  .menu-item-has-children>.submenu-toggle[aria-expanded=true] span{transform:rotate(180deg)}
+  .menu-item-has-children>a{padding-right:30px}
+  .menu-item-has-children>.sub-menu,.current-menu-item>.sub-menu{display:none;position:static;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;width:100%;min-width:0;padding:5px 3px 8px;background:var(--soft);border-top:1px solid var(--line)}
+  .menu-item-has-children.submenu-open>.sub-menu{display:grid}
+  .sub-menu a{display:flex;align-items:center;min-height:40px;padding:7px 8px;border-bottom:1px solid var(--line);font:500 12px/1.3 var(--sans);white-space:normal}
+  .sidebar-cta{display:inline-flex!important;vertical-align:top;width:calc(50% - 6px)!important;min-height:46px;align-items:center;justify-content:center;margin:9px 2px 0!important;padding:8px 6px;font:600 11px/1.25 var(--sans);letter-spacing:.055em}
+  .sidebar-social{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:5px 10px;margin:12px 0 1px;font:600 10px/1.5 var(--sans);letter-spacing:.05em}
+  .sidebar-social a{min-height:34px;display:inline-flex;align-items:center;padding:4px 0}
+  .site-content{width:100%;min-width:0;padding:15px 11px 24px}
+  .page-content h1,.site-content h1{padding-bottom:10px;font-size:26px;line-height:1.25;letter-spacing:.045em}
+  .home-slider{height:clamp(260px,86vw,350px);min-height:0;max-height:none;margin:0 0 20px}
+  .home-slider .slides img{object-position:center 54%}
+  .slider-frame{inset:6px}
+  .slider-arrow{width:40px;height:44px;font-size:30px}
+  .page-hero{height:clamp(215px,64vw,285px);margin-bottom:18px}
+  .detail-text p{font-size:15px;line-height:1.7}
+  .two-images{grid-template-columns:1fr;gap:12px}
+  .two-images img{height:clamp(190px,62vw,270px)}
+  .menu-box{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px}
+  .menu-box img{height:clamp(120px,38vw,165px)}
+  .menu-box h2{padding:9px 4px 4px;font-size:15px;line-height:1.3}
+  .menu-item{gap:4px 10px;padding:12px 3px}
+  .menu-item h3{font-size:15px;line-height:1.45}
+  .menu-item p{font-size:14px;line-height:1.6}
+  .menu-price{font-size:15px}
+  .dining-nav-menu a{min-height:42px;padding:9px 8px;font:600 11px/1.3 var(--sans)}
+  .contact-grid,.staff-list{grid-template-columns:1fr;gap:8px}
+  .button-line{display:grid;grid-template-columns:1fr;gap:9px}
+  .button-line .button{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 12px;font:600 13px/1.3 var(--sans);letter-spacing:.06em}
+  .mobile-reserve{left:8px;right:8px;bottom:max(8px,env(safe-area-inset-bottom));gap:6px}
+  .mobile-reserve a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:48px;padding:9px 4px;font:700 11px/1.2 var(--sans);letter-spacing:.035em;text-transform:uppercase}
+  .mobile-reserve a:nth-child(2){background:var(--accent2)}
+  .bottom-logo{display:flex;flex-wrap:wrap;justify-content:center;gap:7px 12px;padding:12px 8px}
+  .bottom-logo img{width:140px;height:82px}
+  .bottom-logo .footer-nav{flex:1 0 100%;justify-content:center;gap:8px 13px;margin-top:5px}
+  .bottom-logo .footer-nav a{min-height:36px;display:inline-flex;align-items:center;font:600 10px/1.3 var(--sans)}
+  .site-footer{display:flex;flex-direction:column;gap:6px;padding:11px 12px 0;font-size:12px}
+}
+@media(max-width:360px){
+  .nav-menu{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sidebar-cta{font-size:10px}
+  .mobile-reserve{gap:4px}
+  .mobile-reserve a{font-size:10px}
+  .menu-box{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+  .menu-item-has-children>.submenu-toggle{top:0;right:1px;width:44px;height:44px}
+  .menu-item-has-children>a{padding-right:48px}
+  .nav-menu>li>a{font-size:10.5px}
+  .home-slider{height:clamp(250px,76vw,300px)}
+  .home-slider .slide-dots{bottom:78px}
+}
+@media(max-width:440px){.nav-menu{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Touch layouts use explicit dropdown toggles; desktop uses hover and keyboard focus. */
+.submenu-toggle{display:none}
+@media(max-width:650px){
+  .menu-item-has-children>.submenu-toggle{display:flex}
+  .nav-menu>li:before,.nav-menu>li:after{display:block;content:'❧';position:absolute;bottom:-5px;z-index:2;width:10px;height:9px;background:var(--panel);color:var(--accent);font:10px/9px Georgia;text-align:center}
+  .nav-menu>li:before{left:-3px}
+  .nav-menu>li:after{right:-3px}
+  .menu-item-has-children:not(.submenu-open):hover>.sub-menu,
+  .menu-item-has-children:not(.submenu-open):focus-within>.sub-menu{display:none}
+}
+
+/* La cornice usa il fregio originale generato in Higgsfield e condiviso dal cliente. */
+.top-border{
+  height:clamp(26px,6.8vw,82px);
+  background:transparent url('images/spighe-orizzontali.webp') no-repeat center/100% 100%;
+  border:0;
+  box-shadow:none;
+}
+.top-border:before,.top-border:after{display:none}
+.site-main{
+  padding:0 22px clamp(26px,calc(7.2vw - 2.6px),86px);
+  background-color:var(--bg);
+  background-image:url('images/spighe-fondo.webp');
+  background-repeat:no-repeat;
+  background-position:center bottom;
+  background-size:100% auto;
+}
+.site-main:before,.site-main:after{
+  content:"";
+  position:absolute;
+  z-index:4;
+  top:0;
+  bottom:clamp(26px,6.8vw,82px);
+  width:22px;
+  pointer-events:none;
+  background-image:url('images/spighe-lato.webp');
+  background-repeat:repeat-y;
+  background-position:left top;
+  background-size:22px 22px;
+}
+.site-main:before{left:0}
+.site-main:after{right:0;transform:scaleX(-1)}
+.site-main-in{border-left:1px solid var(--line);border-right:1px solid var(--line)}
+@media(max-width:1000px){.site-main{padding-left:22px;padding-right:22px}}
+@media(max-width:650px){
+  .top-border{height:clamp(24px,6.8vw,44px)}
+  .site-main{padding:10px 22px clamp(24px,calc(7.2vw - 2.6px),44px)!important;background-size:100% auto}
+  .site-main:before,.site-main:after{bottom:clamp(24px,calc(7.2vw - 2.6px),44px);width:22px;background-size:22px 22px}
+}
+
+/* Cartigli decorativi: fregi originali in palette Proloco, applicati ai link reali. */
+.reservation-area .reservation-button{
+  position:relative;z-index:1;display:flex;align-items:center;justify-content:center;
+  width:100%;height:92px;margin:10px auto 14px;padding:0 26px;
+  border:0;background:transparent url('images/proloco-reservation-ornament.svg') no-repeat center/100% 100%;
+  color:var(--ink);font:400 18px/1.2 var(--display);letter-spacing:.045em;text-transform:uppercase;text-decoration:none
+}
+.reservation-area .reservation-button:before,.reservation-area .reservation-button:after{display:none}
+.reservation-area .reservation-button:hover{color:var(--accent)}
+.sidebar-cta{
+  position:relative;display:flex!important;align-items:center;justify-content:center;
+  width:100%!important;min-height:58px;margin:10px auto!important;padding:8px 22px;
+  border:0;background:transparent url('images/proloco-plaque-frame.svg') no-repeat center/100% 100%;
+  color:var(--accent2);font:500 13px/1.25 var(--display);letter-spacing:.07em;text-align:center;text-transform:uppercase;text-decoration:none
+}
+.sidebar-cta:before,.sidebar-cta:after{display:none!important}
+.sidebar-cta:hover{color:var(--accent);filter:brightness(.97)}
+.site-main-in{position:relative}
+.site-main-in:before,.site-main-in:after{
+  content:"";position:absolute;z-index:5;top:0;width:58px;height:54px;pointer-events:none;
+  background:url('images/proloco-wheat-corner.svg') no-repeat left top/100% 100%
+}
+.site-main-in:before{left:0}
+.site-main-in:after{right:0;transform:scaleX(-1)}
+@media(max-width:650px){
+  .reservation-area .reservation-button{height:82px;margin:6px auto 11px;padding:0 20px;font-size:16px}
+  .sidebar-cta{min-height:52px;margin:8px auto!important;padding:7px 18px;font-size:12px}
+  .site-main-in:before,.site-main-in:after{width:38px;height:38px}
+}
+
+/* Usa il fregio Higgsfield originale fornito dal cliente, senza ridisegni. */
+.top-border{
+  height:clamp(26px,6.8vw,82px);
+  background:transparent url('images/cornice-spighe.webp') no-repeat center center/100% auto;
+}
+.site-main{
+  background-image:url('images/cornice-spighe.webp');
+  background-repeat:no-repeat;
+  background-position:center calc(100% + 18vw);
+  background-size:100% auto;
+}
+.site-main-in:before,.site-main-in:after{display:none}
+@media(max-width:650px){
+  .top-border{height:clamp(24px,6.8vw,44px)}
+  .site-main{background-position:center calc(100% + 18vw);background-size:100% auto}
+}
+
+/* Alza il logo sopra il fregio, lasciando visibili tutte le punte delle spighe. */
+.site-header .logo{transform:translateY(-38px)}
+@media(max-width:650px){.site-header .logo{transform:translateY(-22px)}}
+
+
+/* ==== Correzioni del 6/10/2026 (versione 48, costruita in Claude Code) ====
+   Testi leggibili, menu chiuso sul telefono, pausa dello slider, dati societari,
+   banner dei cookie. Il resto del foglio di stile è quello della versione 47. */
+
+/* Testi leggibili: niente sotto i 13 px */
+.detail-text p{font-size:16px;line-height:1.7}
+.menu-note{font-size:14px;line-height:1.55}
+/* i nomi dei piatti usano un carattere molto stretto: serve più corpo per leggerli */
+.menu-item h3{font-size:21px;line-height:1.3}
+.menu-item .menu-price{font-size:19px}
+.menu-item p{font-size:14px;line-height:1.55}
+.menu-item .menu-price small{font-size:13px}
+.dining-nav-menu a{font-size:13px}
+.mobile-reserve a{font-size:13px}
+@media(max-width:650px){.menu-item h3{font-size:19px}.menu-item .menu-price{font-size:17px}.dining-nav-menu a{font-size:13px}}
+.sub-menu a{font-size:14px}
+.press-list p{font-size:15px;line-height:1.6}
+.staff p{font-size:15px;line-height:1.6}
+.hours-table th,.hours-table td{font-size:15px}
+.site-footer{font-size:13px}
+.site-footer span{display:block;text-align:center;margin:2px 0}
+.site-footer .dati-societari{font-size:13px;padding:6px 0 4px}
+.site-footer .dati-societari a{color:inherit}
+
+/* Titoletti delle sezioni nella carta completa (versione inglese) */
+.menu-sezione{scroll-margin-top:16px}
+
+/* Il pulsante «Menu» esiste solo sul telefono */
+.apri-menu{display:none}
+@media(max-width:650px){
+  .apri-menu{display:flex;width:100%;align-items:center;justify-content:center;gap:9px;min-height:46px;margin:0;padding:8px 12px;border:0;border-bottom:1px solid var(--line);background:var(--panel);color:var(--ink);font:600 14px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;cursor:pointer}
+  .apri-menu .icona{font-size:18px;letter-spacing:0}
+  .sidebar-container{display:none}
+  body.menu-aperto .sidebar-container{display:block}
+  /* nel menu aperto le voci stanno in colonna, con il pulsante dei sottomenu a destra */
+  body.menu-aperto .nav-menu{display:block!important}
+  body.menu-aperto .nav-menu>li{position:relative;border-bottom:1px solid var(--line)}
+  body.menu-aperto .nav-menu>li:before,body.menu-aperto .nav-menu>li:after{display:none!important}
+  body.menu-aperto .nav-menu>li>a{display:flex!important;justify-content:flex-start!important;text-align:left!important;min-height:46px;padding:10px 60px 10px 14px!important;font:600 14px/1.3 var(--sans)!important}
+  body.menu-aperto .menu-item-has-children>.submenu-toggle{top:1px!important;right:6px!important;width:44px!important;height:44px!important}
+  body.menu-aperto .menu-item-has-children.submenu-open>.sub-menu{display:block!important}
+  .detail-text p{font-size:16px}
+}
+
+/* Slider: pulsante di pausa */
+.slider-pausa{position:absolute;z-index:5;right:16px;bottom:14px;display:flex;align-items:center;justify-content:center;width:36px;height:36px;padding:0;border:1px solid rgba(255,250,243,.9);background:rgba(50,40,36,.6);color:#fffaf3;font:600 12px/1 var(--sans);cursor:pointer}
+.slider-pausa:focus-visible{outline:2px solid #fffaf3;outline-offset:2px}
+
+/* Vino */
+.blocco-vino{margin:6px 0 4px}
+
+/* Banner dei cookie: compare solo se il Pixel è configurato */
+.consenso{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;max-width:580px;margin:0 auto;padding:16px 18px;background:var(--panel);border:1px solid var(--line);box-shadow:0 8px 28px rgba(0,0,0,.22);color:var(--text);font:15px/1.5 var(--serif)}
+.consenso p{margin:0 0 12px}
+.consenso a{color:var(--accent2)}
+.consenso .bottoni{display:flex;gap:10px}
+.consenso button{flex:1;min-height:46px;border:1px solid var(--accent2);background:var(--panel);color:var(--accent2);font:600 14px/1 var(--sans);letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+.consenso button.accetta{background:var(--accent2);color:var(--panel)}
+@media(max-width:650px){.consenso{bottom:72px}}
+
+/* Pagina privacy */
+.privacy h2{margin:28px 0 8px;font-size:24px;letter-spacing:.03em}
+.privacy p,.privacy li{font:15px/1.65 var(--serif);color:var(--text)}
+.privacy ul{padding-left:20px}
